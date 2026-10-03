@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Family Day 2019 | Kotebe Full Gospel Church</title>
+
+<style>
+
+/* =========================
+   GLOBAL DESIGN
+========================= */
+
+:root {
+    --gold: #c59a43;
+    --gold-light: #e6c77e;
+    --cream: #fffaf0;
+    --dark: #29231a;
+    --brown: #604b2c;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 250, 240, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(197,154,67,.3);
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--brown);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 15px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(35,27,16,.72), rgba(35,27,16,.72)),
+        url("fam.jpg")
+        center/cover no-repeat;
+    color: white;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 0;
+    animation: fadeUp 1.2s ease;
+}
+
+.eyebrow {
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--gold-light);
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: white;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid var(--gold-light);
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+}
+
+/* =========================
+   SECTION COMMON
+========================= */
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title small {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.section-title h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    color: var(--brown);
+    margin-top: 10px;
+}
+
+.section-title p {
+    max-width: 650px;
+    margin: 12px auto;
+    color: #777;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    background: #f4ead6;
+    text-align: center;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 35px auto;
+}
+
+.time-box {
+    background: white;
+    padding: 30px 10px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    border: 1px solid rgba(197,154,67,.25);
+}
+
+.time-box h3 {
+    font-size: 45px;
+    color: var(--gold);
+}
+
+.time-box span {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   LIVE CLOCK
+========================= */
+
+.clock {
+    margin-top: 25px;
+    font-size: 22px;
+    color: var(--brown);
+}
+
+.ethiopian-date {
+    color: #80683c;
+    margin-top: 8px;
+}
+
+/* =========================
+   ELAPSED TIME
+========================= */
+
+.elapsed-section {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+.elapsed-section h2 {
+    color: var(--gold-light);
+    font-size: 35px;
+}
+
+.elapsed-section p {
+    color: #ddd;
+    margin-top: 10px;
+}
+
+.elapsed-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 900px;
+    margin: 35px auto 0;
+}
+
+.elapsed-item {
+    padding: 25px 10px;
+    border: 1px solid rgba(230,199,126,.3);
+    border-radius: 12px;
+}
+
+.elapsed-item strong {
+    display: block;
+    font-size: 35px;
+    color: var(--gold-light);
+}
+
+.elapsed-item span {
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 15px 15px 0 var(--gold-light);
+}
+
+.about-text h2 {
+    font-size: 38px;
+    color: var(--brown);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   EVENT DETAILS
+========================= */
+
+.details-section {
+    background: #f4ead6;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.detail-card {
+    background: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.detail-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.detail-card .icon {
+    font-size: 35px;
+    color: var(--gold);
+}
+
+.detail-card h3 {
+    color: var(--brown);
+    margin: 15px 0 8px;
+}
+
+/* =========================
+   LOCATION / MAP
+========================= */
+
+.location-section {
+    text-align: center;
+}
+
+.map-container {
+    overflow: hidden;
+    border-radius: 20px;
+    border: 4px solid white;
+    box-shadow: 0 10px 35px rgba(0,0,0,.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 430px;
+    border: 0;
+}
+
+.location-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.gps-status {
+    margin-top: 15px;
+    color: var(--brown);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #211c15;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer h2 {
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #ccc;
+    margin: 5px;
+}
+
+footer .verse {
+    font-style: italic;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+footer .copyright {
+    border-top: 1px solid #514637;
+    padding-top: 20px;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        margin: 7px;
+    }
+
+    .countdown,
+    .elapsed-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .time-box h3 {
+        font-size: 35px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .map-container iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width: 380px) {
+    .countdown,
+    .elapsed-grid {
+        gap: 8px;
+    }
+
+    .time-box h3 {
+        font-size: 28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="container navbar">
+
+        <div class="logo">
+            KOTEBE FULL GOSPEL BELIEVERS CHURCH
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#countdown">Countdown</a></li>
+            <li><a href="#details">Event</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+
+    </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div class="eyebrow">
+            Kotebe Full Gospel Believers Church
+        </div>
+
+        <h1>
+            FAMILY <span>DAY</span><br>
+            2019
+        </h1>
+
+        <p>
+            ኤፌሶን 4:32 <br>
+32 እግዚአብሔር በክርስቶስ ይቅር እንዳላችሁ፣ እናንተም ይቅር ተባባሉ፤ እርስ በርሳችሁ ቸሮችና ርኅሩኆች ሁኑ።
+        </p>
+
+        <p>
+            Come as a family. Leave with beautiful memories.
+        </p>
+
+        <a href="#countdown" class="btn btn-gold">
+            Explore the Celebration
+        </a>
+
+        <a href="#location" class="btn btn-outline">
+            Find Our Church
+        </a>
+
+    </div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section" id="countdown">
+
+    <div class="container">
+
+        <div class="section-title">
+            <small>Save the Date</small>
+            <h2>Until We Celebrate Together</h2>
+            <p>
+                October 10, 2026 · Meskerem 30, 2019 E.C.
+            </p>
+        </div>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <h3 id="days">00</h3>
+                <span>Days</span>
+            </div>
+
+            <div class="time-box">
+                <h3 id="hours">00</h3>
+                <span>Hours</span>
+            </div>
+
+            <div class="time-box">
+                <h3 id="minutes">00</h3>
+                <span>Minutes</span>
+            </div>
+
+            <div class="time-box">
+                <h3 id="seconds">00</h3>
+                <span>Seconds</span>
+            </div>
+
+        </div>
+
+        <div class="clock">
+            Addis Ababa Time: <strong id="clock">Loading...</strong>
+        </div>
+
+        <div class="ethiopian-date" id="ethiopianDate">
+            Ethiopian Calendar: Loading...
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container about-grid">
+
+        <div>
+            <img
+                class="about-image"
+                src="fam1.jpg"
+                alt="Family celebrating together"
+            >
+        </div>
+
+        <div class="about-text">
+
+            <h2>A Celebration of Love, Faith & Unity</h2>
+
+            <p>
+               Family Day is a special day where church brings people of all ages together 🏛️.
+            </p>
+
+            <p>
+                Parents, kids, teenagers, youths and servers sit and pray side by side instead of going to different rooms 🙏.
+            </p>
+
+            <p>
+                After the service, everyone shares good food and plays fun games outside 🎲🍽️.
+            </p>
+            <p>
+                Most of all, it reminds us that church is one big family ready to care for each other ❤️.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EVENT DETAILS -->
+
+<section class="details-section" id="details">
+
+    <div class="container">
+
+        <div class="section-title">
+            <small>Join the Celebration</small>
+            <h2>Event Information</h2>
+        </div>
+
+        <div class="details-grid">
+
+            <div class="detail-card">
+                <div class="icon">📅</div>
+                <h3>Date</h3>
+                <p>October 10, 2026</p>
+                <p>Meskerem 30, 2019 E.C.</p>
+            </div>
+
+            <div class="detail-card">
+                <div class="icon">📍</div>
+                <h3>Venue</h3>
+                <p>Kotebe Full Gospel Church</p>
+                <p>Addis Ababa, Ethiopia</p>
+            </div>
+
+            <div class="detail-card">
+                <div class="icon">❤️</div>
+                <h3>Theme</h3>
+                <p>One Family.</p>
+                <p>One Faith. Endless Love.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LOCATION -->
+
+<section class="location-section" id="location">
+
+    <div class="container">
+
+        <div class="section-title">
+            <small>Visit Us</small>
+            <h2>Find Our Church</h2>
+            <p>
+                We look forward to welcoming you and your family.
+            </p>
+        </div>
+
+        <div class="map-container">
+
+            <iframe
+                title="Kotebe Full Gospel Church map"
+                src="https://maps.google.com/maps?q=Kotebe%20Full%20Gospel%20Church%2C%20Addis%20Ababa%2C%20Ethiopia&z=15&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <div class="location-actions">
+
+            <button class="btn btn-gold" onclick="getMyLocation()">
+                📍 Find My Location
+            </button>
+
+            <button class="btn btn-outline" style="color:#604b2c;border-color:#c59a43"
+                onclick="openDirections()">
+                Get Directions
+            </button>
+
+        </div>
+
+        <p class="gps-status" id="gpsStatus">
+            Enable location permission to use GPS.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>Kotebe Full Gospel Church</h2>
+
+    <p>Family Day 2019 E.C.</p>
+
+    <p class="verse">
+        "How good and pleasant it is when God's people live together in unity!"
+        — Psalm 133:1
+    </p>
+
+    <p>One Family. One Faith. Endless Love.</p>
+
+    <div class="copyright">
+        © 2026 Kotebe Full Gospel Believers Church · Family Day
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* =========================
+   EVENT CONFIGURATION
+========================= */
+
+// Event date: October 10, 2026.
+// Default time is midnight because the service time has not been specified.
+// Change the hour/minute here when the actual event time is known.
+
+const eventDate = new Date("2026-10-10T14:00:00+03:00");
+
+// Starting date for elapsed-time counter.
+// Assumed Gregorian date.
+
+const startingDate = new Date("2019-01-30T00:00:00+03:00");
+
+// Church destination used by Google Maps.
+
+const churchDestination =
+    "Kotebe Full Gospel Church, Addis Ababa, Ethiopia";
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+function updateCountdown() {
+
+    const now = new Date();
+    const difference = eventDate - now;
+
+    if (difference <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+
+/* =========================
+   LIVE CLOCK
+========================= */
+
+function updateClock() {
+
+    const now = new Date();
+
+    const clock = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Africa/Addis_Ababa",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+    });
+
+    const ethiopianDate = new Intl.DateTimeFormat(
+        "en-u-ca-ethiopic",
+        {
+            timeZone: "Africa/Addis_Ababa",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        }
+    );
+
+    document.getElementById("clock").textContent =
+        clock.format(now);
+
+    document.getElementById("ethiopianDate").textContent =
+        "Ethiopian Calendar: " + ethiopianDate.format(now);
+}
+
+
+/* =========================
+   GPS LOCATION
+========================= */
+
+function getMyLocation() {
+
+    const status = document.getElementById("gpsStatus");
+
+    if (!navigator.geolocation) {
+        status.textContent =
+            "Geolocation is not supported by this browser.";
+        return;
+    }
+
+    status.textContent = "Requesting your location...";
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            status.textContent =
+                "Your location: " +
+                latitude.toFixed(5) + ", " +
+                longitude.toFixed(5);
+
+            const mapsUrl =
+                "https://www.google.com/maps/dir/?api=1" +
+                "&origin=" + latitude + "," + longitude +
+                "&destination=" +
+                encodeURIComponent(churchDestination) +
+                "&travelmode=driving";
+
+            window.open(mapsUrl, "_blank");
+
+        },
+
+        function(error) {
+
+            if (error.code === error.PERMISSION_DENIED) {
+                status.textContent =
+                    "Location permission was denied. Allow location access in your browser.";
+            } else {
+                status.textContent =
+                    "Unable to get your location. Please try again.";
+            }
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 15000,
+            maximumAge: 0
+        }
+
+    );
+}
+
+
+/* =========================
+   GOOGLE MAPS DIRECTIONS
+========================= */
+
+function openDirections() {
+
+    const url =
+        "https://www.google.com/maps/dir/?api=1&destination=" +
+        encodeURIComponent(churchDestination);
+
+    window.open(url, "_blank");
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+    });
+
+});
+
+
+/* =========================
+   START ALL LIVE FUNCTIONS
+========================= */
+
+function updateAll() {
+    updateCountdown();
+    updateClock();
+}
+
+updateAll();
+
+setInterval(updateAll, 1000);
+
+</script>
+
+</body>
+</html>
